@@ -8,7 +8,7 @@ class Snake{
     private:
         COORD pos;
         int len, vel;
-        char direction;
+        char dir;
         vector <COORD> body;
 
     public:
@@ -20,6 +20,7 @@ class Snake{
         void grow();
         bool collided();
         vector <COORD> get_body();
+        void direction(char dir);
 };
 
 #endif

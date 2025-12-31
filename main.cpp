@@ -5,8 +5,8 @@
 #include "include/Snake.h"
 #include "include/Food.h"
 
-#define WIDTH 50
-#define HEIGHT 25
+#define WIDTH 75
+#define HEIGHT 50
 
 using namespace std;
 
