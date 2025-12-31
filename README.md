@@ -16,9 +16,7 @@ OS: Windows.
 ## 🚀 Installation & Compilation
 1. Project Structure
 Ensure your directory looks like this:
-
-Plaintext
-
+```
 Snake_Hunting/
 ├── main.cpp
 ├── src/
@@ -30,10 +28,10 @@ Snake_Hunting/
 ├── UI/
 │   └── png/ (Your sprite files here)
 └── SFML-2.5.1/ (Library folder)
+```
 2. Compilation
 Run the following command in your terminal to compile the game. This command links the SFML headers and libraries correctly:
 
-Bash
 ```
 g++ main.cpp src/Snake.cpp src/Food.cpp -o main.exe \
 -I"C:/Users/Lenovo/Desktop/Snake_Hunting/SFML-2.5.1/include" \
@@ -42,14 +40,15 @@ g++ main.cpp src/Snake.cpp src/Food.cpp -o main.exe \
 ```
 3. Running the Game
 Before launching main.exe, copy the following DLLs from SFML-2.5.1/bin to the folder where your main.exe is located:
-
+```
 sfml-graphics-2.dll
 
 sfml-window-2.dll
 
 sfml-system-2.dll
-
+```
 🕹 Controls
+```
 W / Up: Move Up
 
 A / Left: Move Left
@@ -59,7 +58,7 @@ S / Down: Move Down
 D / Right: Move Right
 
 R: Restart game (after Game Over)
-
+```
 ## ✨ Key Features
 Graphic Rendering: Uses sf::Sprite and sf::Texture for all game objects.
 
