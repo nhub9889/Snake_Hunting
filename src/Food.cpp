@@ -1,4 +1,4 @@
-#include "include/Food.h"
+#include "../include/Food.h"
 #define WIDTH 150
 #define HEIGHT 100
 Food::Food(){
