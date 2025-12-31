@@ -1,25 +1,36 @@
 #ifndef SNAKE_H
 #define SNAKE_H
+
 #include <windows.h>
 #include <vector>
 
+#define WIDTH 20
+#define HEIGHT 25
+
 using namespace std;
-class Snake{
+
+class Snake
+{
     private:
         COORD pos;
-        int len, vel;
-        char direction;
-        vector <COORD> body;
+        int vel;
+        char dir;
+        int len;
+        vector<COORD> body;
 
     public:
         Snake(COORD pos, int vel);
-        void change_dir(char dir);
-        void move_snake();
-        COORD get_pos();
-        bool eaten(COORD food_pos);
+
         void grow();
+        void move_snake();
+        void direction(char dir);
+
+        vector<COORD> get_body();
+
         bool collided();
-        vector <COORD> get_body();
+        bool eaten(COORD food);
+
+        COORD get_pos();
 };
 
-#endif
+#endif 

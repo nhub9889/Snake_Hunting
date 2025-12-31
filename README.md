@@ -1,60 +1,77 @@
-# Snake Hunting (Console Version)
-A classic Snake game built in C++ specifically for the Windows Console. This project focuses on core game logic, including coordinate management, snake growth, and collision detection without the need for external graphics libraries.
+# 🐍 Snake Hunting (SFML Version)
+A modern take on the classic Snake game developed in C++ using the SFML (Simple and Fast Multimedia Library). This version upgrades the traditional console experience with 2D sprites, fluid movement, and a graphical user interface.
 
-Note: This codebase is inspired by and based on the "Creating Simple Snake Game in C++" tutorial by ProgrammingKnowledge.
+## 🎨 Visual Assets
+Sprites: The high-quality 2D snake and food textures are sourced from OpenGameArt.org - Snake Sprites 2D.
 
-## 🎮 Features
-Dynamic Growth: The snake grows longer every time it consumes a "building" (food).
-
-Score Tracking: Real-time score updates displayed at the top of the console.
-
-Classic Mechanics: Traditional "Game Over" triggers when the snake's own body.
-
-Flicker-Free Rendering: Optimized console drawing using SetConsoleCursorPosition instead of system("cls").
+Theme: A dark-themed hunting ground with smooth green snake segments and building/apple targets.
 
 ## 🛠 Prerequisites
-Operating System: Windows (uses windows.h for console cursor control).
+Compiler: GCC/MinGW (32-bit recommended for your current setup).
 
-Compiler: Any C++ compiler (MinGW, Visual Studio, etc.).
+Library: SFML v2.5.1.
 
-Libraries: Standard C++ libraries (iostream, vector, ctime, conio.h).
+OS: Windows.
 
-## ⌨️ Controls
-Use the following keys to guide the snake:
+## 🚀 Installation & Compilation
+1. Project Structure
+Ensure your directory looks like this:
 
-W: Move Up
+Plaintext
 
-S: Move Down
-
-A: Move Left
-
-D: Move Right
-
-## 🚀 How to Run
-You can play by running Snake_Hunting.exe, or by cloning this repository and using the source files.
-
-Ensure you have the include/Snake.h and include/Food.h headers in the correct directory.
-
-Compile the project using your preferred IDE or command line:
+Snake_Hunting/
+├── main.cpp
+├── src/
+│   ├── Snake.cpp
+│   └── Food.cpp
+├── include/
+│   ├── Snake.h
+│   └── Food.h
+├── UI/
+│   └── png/ (Your sprite files here)
+└── SFML-2.5.1/ (Library folder)
+2. Compilation
+Run the following command in your terminal to compile the game. This command links the SFML headers and libraries correctly:
 
 Bash
+```
+g++ main.cpp src/Snake.cpp src/Food.cpp -o main.exe \
+-I"C:/Users/Lenovo/Desktop/Snake_Hunting/SFML-2.5.1/include" \
+-L"C:/Users/Lenovo/Desktop/Snake_Hunting/SFML-2.5.1/lib" \
+-lsfml-graphics -lsfml-window -lsfml-system
+```
+3. Running the Game
+Before launching main.exe, copy the following DLLs from SFML-2.5.1/bin to the folder where your main.exe is located:
 
-g++ main.cpp src/Snake.cpp src/Food.cpp -I include -o SnakeHunting.exe
-Run the generated .exe file.
+sfml-graphics-2.dll
 
-## 🏗 Project Structure
-main.cpp: Contains the game loop, input handling, and rendering logic.
+sfml-window-2.dll
 
-Snake.h / Snake.cpp: Manages snake coordinates, movement, and body growth logic.
+sfml-system-2.dll
 
-Food.h / Food.cpp: Handles random spawning of food (buildings) within the board boundaries.
+🕹 Controls
+W / Up: Move Up
 
-## 📝 Technical Notes
-Coordinate System: The game uses the COORD structure where (WIDTH/2, HEIGHT/2) is the middle of board.
+A / Left: Move Left
 
-Rendering: Instead of clearing the whole screen every frame (which causes flickering), the cursor is reset to the top-left position after each update.
+S / Down: Move Down
 
-Macros: WIDTH and HEIGHT are defined as macros for easy board resizing.
+D / Right: Move Right
 
-🌟 Acknowledgments
-Special thanks to the ProgrammingKnowledge YouTube channel for the foundational logic and tutorials on C++ game development.
+R: Restart game (after Game Over)
+
+## ✨ Key Features
+Graphic Rendering: Uses sf::Sprite and sf::Texture for all game objects.
+
+Coordinate Logic: Smooth mapping between the logic grid and pixel-based screen coordinates.
+
+Game Over State: A dedicated game-over screen with a restart mechanic.
+
+Collision Physics: Accurate head-to-body and boundary detection.
+
+## 📜 Credits
+Game Logic: Inspired by ProgrammingKnowledge's Snake Tutorial.
+
+Graphics: Snake Sprites 2D by various artists on OpenGameArt.
+
+Library: SFML Team.

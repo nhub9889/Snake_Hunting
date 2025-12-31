@@ -1,13 +1,13 @@
 #include "../include/Food.h"
-#define WIDTH 150
-#define HEIGHT 100
+#define WIDTH 20
+#define HEIGHT 25
 Food::Food(){
     gen_food();
 }
 
 void Food::gen_food(){
-    pos.X = (rand()%(WIDTH) -  3) + 1;
-    pos.Y = (rand()%(HEIGHT) - 3) + 1;
+    pos.X = (rand() % (WIDTH - 2)) + 1; 
+    pos.Y = (rand() % (HEIGHT - 2)) + 1;
 }
 
 COORD Food::get_pos(){
